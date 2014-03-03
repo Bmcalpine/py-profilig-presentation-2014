@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Using SQLite?  Which geometry should you use.</title>
+		<title>Profiling Python</title>
 
-		<meta name="description" content="A presentation for Esri Developer Summit 2014 on SQLite and geometry storeage">
+		<meta name="description" content="A presentation for Esri Developer Summit 2014 on profiling Python">
 		<meta name="author" content="Jamie Phillips">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,74 +37,61 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Using SQLite?</h1>
-					<h3>Which geometry should you use.</h3>                    
+					<h1>Profiling Python</h1>                  
 					<p>
-						<small>Created by <a href="">Jamie Phillips</a></small>
+						<small>By <a href="">Jamie Phillips</a>, GISi</small>
 					</p>
-                    <img width="666" height="205" src="images/exploits_of_a_mom.png" alt="XKCD Comic, Bobby Tables">
                     <p>
-                        <small>Image credits: <a href="https://xkcd.com/327/">xkcd</a></small>
+                    <blockquote cite="http://r.32k.io/">
+						&ldquo;You don’t have a performance problem. You have a visibility problem.&rdquo; - Ryan Smith
+					</blockquote>
                     </p>
                     <aside class="notes">
-						Start off talking about how this is new and not well advertised. Ask how many knew about it.  Talk about what got me interested.  Co-worker brought it up as a way to make gp faster.    
+						    
 					</aside>
 				</section>
 				<section>
-					<h2>What's the big deal?</h2>
-					<!--<ul>
-						<li>Compact library</li>
-						<li>Self-contained</li>
-						<li>Cross-platform</li>
-					</ul>-->
+					<h2>What is profiling?</h2>
 					 <aside class="notes">
-						Nothing really. Talk about why it is important, things such as faster queries over file gdb, acid compliance, full database.  
+						
 					</aside>
 				</section>
 				
 				<section>
-					<h2>What's the big deal?</h2>
+					<h2>Batteries included</h2>
 					 <aside class="notes">
-						Talk about why it is important, things such as faster queries over file gdb, acid compliance, full database.  
+						Talk about timeit, cProfile, pstats.
 					</aside>
 				</section>
                 
                 <section>
-					<h2>Geometry Storage Options</h2>
-					<ul>
-						<li class="fragment">ST_Geometry</li>
-						<li class="fragment">Spatialite</li>
-					</ul>
+					<h2>Others tools</h2>
+					
                      <aside class="notes">
-						
+						runsnakerun, pycallgraphy, obj_graph, memory_profiler
 					</aside>
 				</section>
-                
+				
 				<section>
-					<h2>Methodology</h2>
-					<ul>
-						<li class="fragment">Automated Scripts</li>
-						<li class="fragment">Spatialite</li>
-					</ul>
-                     <aside class="notes">
-						Created scripts to automate everything.  I did 10 runs on each type of performance factor.  I used cProfile to collect the data.
-					</aside>
-				</section>
-                 <!-- Results -->
-				<section>
-					<section>
-						<h2>File Geodatabase</h2>
-                        
-					</section>
-					<section>
-						<h2>SQLite</h2>
-					</section>					
-					<section>
-						<h2>Spatialite</h2>
-					</section>
-				</section>
-				<section>
-					<h2>Point of View</h2>
+					<h2>timeit</h2>
+                    <p>From Python:
+                    	<pre>
+                            <code data-trim>
+                                import timeit
+                                
+                                timeit.timeit('', number=1000)
+                            </code>
+                        </pre>
+                    </p>
+                    <p>From Command Line:
+                    	<pre>
+                            <code data-trim>
+                                import timeit
+                                
+                                timeit.timeit('', number=1000)
+                            </code>
+                        </pre>
+                    </p>
 					<p>
 						Press <strong>ESC</strong> to enter the slide overview.
 					</p>
