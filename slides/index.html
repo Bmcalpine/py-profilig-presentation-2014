@@ -88,6 +88,12 @@ $ python -m timeit '";".join(str(n) for n in xrange(100))'
 
                 <section>
 					<h2>Our Example</h2>
+                    <aside class="notes">
+					    Output is a special profile file as defined by -o.	
+                        runsnakerun, pycallgraphy, obj_graph, memory_profiler
+					</aside>
+				</section>
+                 <section>
                     <pre>
                         <code data-trim>
 rows = arcpy.SearchCursor("C:/temp/address_point.shp", 
@@ -97,8 +103,8 @@ current_street = ""
 
 for row in rows:
     if current_street != row.STREET_NAM:
-    current_street = row.STREET_NAM        
-    print(current_street)
+        current_street = row.STREET_NAM        
+        print(current_street)
                         </code>
                     </pre>
                      <aside class="notes">
@@ -210,6 +216,15 @@ Line #    Mem usage    Increment   Line Contents
                 <!-- objgraph -->
                 <section>
 					<h2>objgraph</h2>
+                     <pre class="fragment">
+                        <code >                           
+objgraph.show_growth(limit=3)
+objgraph.show_growth()
+                        </code>
+                    </pre>
+                </section>
+                <section>
+					<h2>objgraph Decorator</h2>
                     <pre>
                       <code data-trim>
 import objgraph
@@ -257,7 +272,7 @@ dict                   1407        +1
                     </aside>
 				</section>
                 <section>
-					<h2>Object Graphs</h2>
+					<h2>objgraph Graphs</h2>
                     <img width="850" height="148" src="images/objgraph.png" alt="objgraph screenshot" style="border-radius: 15px"/>
                     <p>objgraph.show_refs([rows], filename='objgraph.png')</p>  
 				</section>
